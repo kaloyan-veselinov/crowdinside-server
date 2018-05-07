@@ -7,18 +7,20 @@ public class WiFiRecord {
     private String bssid;
     private int level;
     private int channel;
+    private long timestamp;
 
-    public WiFiRecord(String bssid, int level, int channel){
+    public WiFiRecord(String bssid, int level, int channel, long timestamp){
         this.bssid = bssid;
         this.level = level;
         this.channel = channel;
     }
 
-    public WiFiRecord(JSONObject wifiData){
+    public WiFiRecord(JSONObject wifiData, long timestamp){
         try {
             this.bssid = wifiData.getString("bssid");
             this.level = wifiData.getInt("level");
             this.channel = wifiData.getInt("channel");
+            this.timestamp = timestamp;
         } catch (JSONException e){
             e.printStackTrace();
         }

@@ -9,14 +9,14 @@ public class LocationRecord {
     private byte source;
     private long timestamp;
 
-    public LocationRecord(JSONObject locationRecord){
+    public LocationRecord(JSONObject locationRecord, long timestamp){
         try{
             this.latitude = locationRecord.getDouble("latitude");
             this.longitude = locationRecord.getDouble("longitude");
             this.source = Byte.valueOf(locationRecord.getString("source"));
             this.certainty = locationRecord.getDouble("certainty");
             this.accuracyRange = locationRecord.getDouble("accuracyRange");
-            this.timestamp = locationRecord.getLong("timestamp");
+            this.timestamp = timestamp;
         } catch(JSONException e){
             e.printStackTrace();
         }
