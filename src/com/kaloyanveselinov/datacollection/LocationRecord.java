@@ -1,4 +1,4 @@
-package com.kaloyanveselinov;
+package com.kaloyanveselinov.datacollection;
 
 import org.json.JSONException;
 import org.json.JSONObject;
