@@ -8,11 +8,13 @@ public class DataAnalyzer {
 
     public static void main(String[] args) {
 	    if (args.length != 1){
-	        System.err.println("Usage: java dataAnalyzer.java filename.js");
+	        System.err.println("Usage: java dataAnalyzer.java filename.JSON");
 	        System.exit(-1);
 	    }
         File file = new File(args[0]);
-        DataSet dataSet = new DataSet(file);
-        dataSet.toCSV();
+	    if(file.exists() && !file.isDirectory()) {
+            DataSet dataSet = new DataSet(file);
+            dataSet.toCSV();
+        } else System.err.println("No such file");
     }
 }

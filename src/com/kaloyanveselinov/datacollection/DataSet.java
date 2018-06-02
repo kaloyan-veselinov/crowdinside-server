@@ -6,21 +6,27 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Iterator;
 import java.util.LinkedList;
+
+import static com.kaloyanveselinov.datacollection.AggregatedReading.aggregateReading;
 
 public class DataSet {
     private LinkedList<InertialSensorRecord> accelerometerData;
     private LinkedList<InertialSensorRecord> magnetometerData;
     private LinkedList<InertialSensorRecord> gyroscopeData;
+    private LinkedList<AggregatedReading> aggregatedReadings;
+    private final int AGGREGATE_INTERVAL = 200;
     private LinkedList<LocationRecord> gpsData;
     private LinkedList<WiFiScan> wifiData;
-    private String phoneId, buildingName;
-    private String timestamp;
+    private Timestamp timestamp;
 
     public DataSet(File dataFile){
         accelerometerData = new LinkedList<>();
         magnetometerData = new LinkedList<>();
         gyroscopeData = new LinkedList<>();
+        aggregatedReadings = new LinkedList<>();
         gpsData = new LinkedList<>();
         wifiData = new LinkedList<>();
         try {
@@ -28,12 +34,12 @@ public class DataSet {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = bufferedReader.readLine();
             JSONObject identifier = new JSONObject(line);
-            phoneId = identifier.getString("phoneID");
-            buildingName = identifier.getString("buildingName");
-            timestamp = identifier.getString("timestamp");
+            timestamp = Timestamp.valueOf(identifier.getString("timestamp"));
+            System.out.println(timestamp.getTime());
             while((line = bufferedReader.readLine()) != null){
                 parseLine(line);
             }
+            aggregateReadings();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,17 +48,17 @@ public class DataSet {
     private void parseLine(String line){
         JSONObject parsedLine = new JSONObject(line);
         String sensorType = parsedLine.getString("sensorType");
-        long timestamp = parsedLine.getLong("timestamp");
+        Timestamp timestamp = new Timestamp(parsedLine.getLong("timestamp"));
         JSONObject data = parsedLine.getJSONObject("data");
         switch (sensorType){
             case "accelerometer":
-                accelerometerData.add(new InertialSensorRecord(data, sensorType, timestamp));
+                accelerometerData.add(new InertialSensorRecord(data, timestamp));
                 break;
             case "magnetometer":
-                magnetometerData.add(new InertialSensorRecord(data, sensorType, timestamp));
+                magnetometerData.add(new InertialSensorRecord(data, timestamp));
                 break;
             case "gyroscope":
-                gyroscopeData.add(new InertialSensorRecord(data, sensorType, timestamp));
+                gyroscopeData.add(new InertialSensorRecord(data, timestamp));
                 break;
             case "wifiAP":
                 wifiData.add(new WiFiScan(data, timestamp));
@@ -63,35 +69,32 @@ public class DataSet {
         }
     }
 
+    public void aggregateReadings(){
+        Iterator<InertialSensorRecord> accI = accelerometerData.iterator();
+        Iterator<InertialSensorRecord> gyroI = gyroscopeData.iterator();
+        Iterator<InertialSensorRecord> magnI = magnetometerData.iterator();
+        long time = timestamp.getTime();
+        long maxTime;
+        while(accI.hasNext() || gyroI.hasNext() || magnI.hasNext()){
+            maxTime = time + AGGREGATE_INTERVAL;
+            AggregatedReading aggregatedReading = new AggregatedReading(new Timestamp(time));
+            aggregatedReading.setAcceleration(aggregateReading(accI, maxTime));
+            aggregatedReading.setMagnetometer(aggregateReading(magnI, maxTime));
+            aggregatedReading.setGyroscope(aggregateReading(gyroI, maxTime));
+            aggregatedReadings.add(aggregatedReading);
+            time = maxTime;
+        }
+    }
+
     public void toCSV(){
-        String fileSuffix = "_" + timestamp.substring(0, timestamp.length() - 4).replaceAll(":", "-").replaceAll(" ", "_") + ".csv";
+        String fileSuffix = "_" + timestamp.toString().substring(0, timestamp.toString().length() - 4).replaceAll(":", "-").replaceAll(" ", "_") + ".csv";
         InertialSensorRecord.toCSV(accelerometerData, "accelerometer", "accelerometer" + fileSuffix);
         InertialSensorRecord.toCSV(magnetometerData, "magnetometer", "magnetometer" + fileSuffix);
         InertialSensorRecord.toCSV(gyroscopeData, "gyroscope", "gyroscope" + fileSuffix);
+        AggregatedReading.toCSV(aggregatedReadings, fileSuffix);
     }
 
-
-    public LinkedList<InertialSensorRecord> getAccelerometerData() {
-        return accelerometerData;
-    }
-
-    public LinkedList<InertialSensorRecord> getMagnetometerData() {
-        return magnetometerData;
-    }
-
-    public LinkedList<InertialSensorRecord> getGyroscopeData() {
-        return gyroscopeData;
-    }
-
-    public LinkedList<LocationRecord> getGpsData() {
-        return gpsData;
-    }
-
-    public LinkedList<WiFiScan> getWifiData() {
-        return wifiData;
-    }
-
-    public String getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 

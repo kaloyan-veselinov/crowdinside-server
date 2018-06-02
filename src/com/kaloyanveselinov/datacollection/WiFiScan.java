@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Timestamp;
 import java.util.LinkedList;
 
 public class WiFiScan {
@@ -25,9 +26,9 @@ public class WiFiScan {
     }
 
     private LinkedList<WiFiRecord> wifiAccessPoints;
-    private long timestamp;
+    private Timestamp timestamp;
 
-    public WiFiScan(JSONObject wifiScanData, long timestamp){
+    public WiFiScan(JSONObject wifiScanData, Timestamp timestamp){
         this.timestamp = timestamp;
         wifiAccessPoints = new LinkedList<>();
         try{
@@ -45,7 +46,7 @@ public class WiFiScan {
         return wifiAccessPoints;
     }
 
-    public long getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 

@@ -8,22 +8,28 @@ import org.json.JSONObject;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class InertialSensorRecord {
-    private String type;
-    private float x, y, z;
-    private long timestamp;
-    private long sensorTimestamp;
+    private float x;
+    private float y;
+    private float z;
+    private Timestamp timestamp;
 
-    public InertialSensorRecord(JSONObject sensorData, String sensorType, long timestamp){
+    public InertialSensorRecord(float x, float y, float z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.timestamp = new Timestamp(0);
+    }
+
+    public InertialSensorRecord(JSONObject sensorData, Timestamp timestamp){
         try {
-            this.type = sensorType;
             this.x = sensorData.getFloat("xValue");
             this.y = sensorData.getFloat("yValue");
             this.z = sensorData.getFloat("zValue");
             this.timestamp = timestamp;
-            this.sensorTimestamp = sensorData.getLong("sensorTimestamp");
         } catch (JSONException e){
             e.printStackTrace();
         }
@@ -35,15 +41,11 @@ public class InertialSensorRecord {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
             CSVPrinter accelerationPrinter = new CSVPrinter(bufferedWriter, CSVFormat.EXCEL.withHeader(HEADERS));
             for (InertialSensorRecord sensorRecord : inertialSensorRecordList) {
-                accelerationPrinter.printRecord(sensorRecord.getSensorTimestamp(), sensorRecord.getX(), sensorRecord.getY(), sensorRecord.getZ());
+                accelerationPrinter.printRecord(sensorRecord.timestamp.getTime(), sensorRecord.x, sensorRecord.y, sensorRecord.z);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public String getType() {
-        return type;
     }
 
     public float getX() {
@@ -58,11 +60,10 @@ public class InertialSensorRecord {
         return z;
     }
 
-    public long getTimestamp() {
-        return timestamp;
+
+    public long getTime() {
+        return timestamp.getTime();
     }
 
-    public long getSensorTimestamp() {
-        return sensorTimestamp;
-    }
+
 }
