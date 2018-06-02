@@ -1,9 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="DataAnalyzer:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/DataAnalyzer_jar</output-path>
+  <artifact type="jar" name="crowdinside-server:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/crowdinside_server_jar</output-path>
     <root id="archive" name="crowdinside-server.jar">
       <element id="module-output" name="crowdinside-server" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-csv-1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-math3-3.6.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/JSON-java.jar" path-in-jar="/" />
     </root>
   </artifact>
