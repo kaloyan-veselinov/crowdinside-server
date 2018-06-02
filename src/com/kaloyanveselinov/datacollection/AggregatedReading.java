@@ -45,15 +45,17 @@ public class AggregatedReading {
     }
 
     public static void toCSV(List<AggregatedReading> aggregatedReadings, String filename) {
+        BufferedWriter bufferedWriter = null;
         try {
             String[] HEADERS = {"timestamp", "x acceleration", "y acceleration", "z acceleration",
                     "x gyro", "y gyro", "z gyro",
                     "x magnetometer", "y magnetometer", "z magnetometer"};
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("aggregated" + filename));
+            bufferedWriter = new BufferedWriter(new FileWriter("aggregated" + filename));
             CSVPrinter csvPrinter = new CSVPrinter(bufferedWriter, CSVFormat.EXCEL.withHeader(HEADERS));
             for (AggregatedReading aggregatedReading : aggregatedReadings) {
                 aggregatedReading.printReadingToCSV(csvPrinter);
             }
+            bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

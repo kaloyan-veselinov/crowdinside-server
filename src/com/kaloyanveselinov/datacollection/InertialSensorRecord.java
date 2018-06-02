@@ -43,6 +43,7 @@ public class InertialSensorRecord {
             for (InertialSensorRecord sensorRecord : inertialSensorRecordList) {
                 accelerationPrinter.printRecord(sensorRecord.timestamp.getTime(), sensorRecord.x, sensorRecord.y, sensorRecord.z);
             }
+            bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

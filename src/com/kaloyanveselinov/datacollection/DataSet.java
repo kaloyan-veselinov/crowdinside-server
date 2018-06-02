@@ -17,7 +17,7 @@ public class DataSet {
     private LinkedList<InertialSensorRecord> magnetometerData;
     private LinkedList<InertialSensorRecord> gyroscopeData;
     private LinkedList<AggregatedReading> aggregatedReadings;
-    private final int AGGREGATE_INTERVAL = 200;
+    private final int AGGREGATE_INTERVAL = 1000;
     private LinkedList<LocationRecord> gpsData;
     private LinkedList<WiFiScan> wifiData;
     private Timestamp timestamp;
@@ -39,7 +39,12 @@ public class DataSet {
             while((line = bufferedReader.readLine()) != null){
                 parseLine(line);
             }
+            bufferedReader.close();
             aggregateReadings();
+            System.err.println(accelerometerData.size());
+            System.err.println(magnetometerData.size());
+            System.err.println(gyroscopeData.size());
+            System.err.println(aggregatedReadings.size());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -76,6 +81,9 @@ public class DataSet {
         long time = timestamp.getTime();
         long maxTime;
         while(accI.hasNext() || gyroI.hasNext() || magnI.hasNext()){
+            if(!accI.hasNext()) System.err.println("No more acc data");
+            if(!magnI.hasNext()) System.err.println("No more magn data");
+            if(!gyroI.hasNext()) System.err.println("No more gyro data");
             maxTime = time + AGGREGATE_INTERVAL;
             AggregatedReading aggregatedReading = new AggregatedReading(new Timestamp(time));
             aggregatedReading.setAcceleration(aggregateReading(accI, maxTime));
