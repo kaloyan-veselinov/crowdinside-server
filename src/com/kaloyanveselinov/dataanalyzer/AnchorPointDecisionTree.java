@@ -7,11 +7,7 @@ import java.io.File;
 import java.util.LinkedList;
 
 public class AnchorPointDecisionTree {
-    private static final double ACCELERATION_VARIANCE_THRESHOLD = 0.5;
-    private static final double ACCELERATION_CORRELATION_THRESHOLD = 0.5;
-    private static final double MAGNETOMETER_VARIANCE_THRESHOLD = 0.6;
-
-    private LinkedList<AggregatedReading> aggregatedReadingsBuffer = new LinkedList<>();
+   private LinkedList<AggregatedReading> aggregatedReadingsBuffer = new LinkedList<>();
 
     public enum AnchorPointType{
         STANDING, WALKING, STAIRS, ELEVATOR, ESCALATOR, UNKNOWN
@@ -22,10 +18,9 @@ public class AnchorPointDecisionTree {
     public AnchorPointType getAnchorPoint(AggregatedReading newReading){
         aggregatedReadingsBuffer.add(newReading);
         if(isInElevator()) return AnchorPointType.ELEVATOR;
-        else if(newReading.getAccelerationVariance() < ACCELERATION_VARIANCE_THRESHOLD){
-            if(newReading.getMagnetometerVariance() < MAGNETOMETER_VARIANCE_THRESHOLD) return AnchorPointType.STANDING;
-            else return AnchorPointType.ESCALATOR;
-        } else if(newReading.getAccYZCorrelation() > ACCELERATION_CORRELATION_THRESHOLD){
+        else if(newReading.getAccelerationVariance() < 0.1){
+            return AnchorPointType.STANDING;
+        } else if(newReading.getAccYZCorrelation() < -0.06){
             return AnchorPointType.STAIRS;
         } else return AnchorPointType.WALKING;
     }
@@ -37,7 +32,7 @@ public class AnchorPointDecisionTree {
         }
         File file = new File(args[0]);
         if(file.exists() && !file.isDirectory()) {
-            DataSet dataSet = new DataSet(file, "", 500);
+            DataSet dataSet = new DataSet(file, "", 1000);
             AnchorPointDecisionTree tree = new AnchorPointDecisionTree();
             for (AggregatedReading aggregatedReading : dataSet.getAggregatedReadings()) {
                 System.out.println(tree.getAnchorPoint(aggregatedReading));
