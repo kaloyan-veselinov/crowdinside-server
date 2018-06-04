@@ -15,12 +15,15 @@ public class DataSet {
     private LinkedList<InertialSensorRecord> magnetometerData;
     private LinkedList<InertialSensorRecord> gyroscopeData;
     private LinkedList<AggregatedReading> aggregatedReadings;
-    private final int AGGREGATE_INTERVAL = 500;
+    private int aggregateInterval = 500;
     private LinkedList<LocationRecord> gpsData;
     private LinkedList<WiFiScan> wifiData;
     private Timestamp timestamp;
+    private String type = "";
 
-    public DataSet(File dataFile) {
+    public DataSet(File dataFile, String type, int aggregateInterval) {
+        this.type = type;
+        this.aggregateInterval = aggregateInterval;
         accelerometerData = new LinkedList<>();
         magnetometerData = new LinkedList<>();
         gyroscopeData = new LinkedList<>();
@@ -75,7 +78,7 @@ public class DataSet {
         long time = timestamp.getTime();
         long maxTime;
         while (accI.hasNext() || gyroI.hasNext() || magnI.hasNext()) {
-            maxTime = time + AGGREGATE_INTERVAL;
+            maxTime = time + aggregateInterval;
             AggregatedReading aggregatedReading = new AggregatedReading(new Timestamp(time));
             aggregatedReading.setAcceleration(accI, maxTime);
             aggregatedReading.setMagnetometer(magnI, maxTime);
@@ -90,7 +93,7 @@ public class DataSet {
         InertialSensorRecord.toCSV(accelerometerData, "accelerometer", "accelerometer" + fileSuffix);
         InertialSensorRecord.toCSV(magnetometerData, "magnetometer", "magnetometer" + fileSuffix);
         InertialSensorRecord.toCSV(gyroscopeData, "gyroscope", "gyroscope" + fileSuffix);
-        AggregatedReading.toCSV(aggregatedReadings, fileSuffix);
+        AggregatedReading.toCSV(aggregatedReadings, fileSuffix, type);
     }
 
     public Timestamp getTimestamp() {

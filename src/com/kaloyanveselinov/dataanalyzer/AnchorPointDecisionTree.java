@@ -25,7 +25,7 @@ public class AnchorPointDecisionTree {
         else if(newReading.getAccelerationVariance() < ACCELERATION_VARIANCE_THRESHOLD){
             if(newReading.getMagnetometerVariance() < MAGNETOMETER_VARIANCE_THRESHOLD) return AnchorPointType.STANDING;
             else return AnchorPointType.ESCALATOR;
-        } else if(newReading.getAccelerationXYCorrelation() > ACCELERATION_CORRELATION_THRESHOLD){
+        } else if(newReading.getAccYZCorrelation() > ACCELERATION_CORRELATION_THRESHOLD){
             return AnchorPointType.STAIRS;
         } else return AnchorPointType.WALKING;
     }
@@ -37,7 +37,7 @@ public class AnchorPointDecisionTree {
         }
         File file = new File(args[0]);
         if(file.exists() && !file.isDirectory()) {
-            DataSet dataSet = new DataSet(file);
+            DataSet dataSet = new DataSet(file, "", 500);
             AnchorPointDecisionTree tree = new AnchorPointDecisionTree();
             for (AggregatedReading aggregatedReading : dataSet.getAggregatedReadings()) {
                 System.out.println(tree.getAnchorPoint(aggregatedReading));
