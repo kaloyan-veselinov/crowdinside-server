@@ -34,9 +34,9 @@ public class AnchorPointDecisionTree {
         }
         File file = new File(args[0]);
         if (file.exists() && !file.isDirectory()) {
-            DataSet dataSet = new DataSet(file, "", 1000);
+            DataSet dataSet = new DataSet(file);
             AnchorPointDecisionTree tree = new AnchorPointDecisionTree();
-            for (AggregatedReading aggregatedReading : dataSet.getAggregatedReadings()) {
+            for (AggregatedReading aggregatedReading : dataSet.aggregateReadings(1000)) {
                 System.out.println(tree.getAnchorPoint(aggregatedReading));
             }
         } else System.err.println("No such file");

@@ -14,20 +14,16 @@ public class DataSet {
     private LinkedList<InertialSensorRecord> accelerometerData;
     private LinkedList<InertialSensorRecord> magnetometerData;
     private LinkedList<InertialSensorRecord> gyroscopeData;
-    private LinkedList<AggregatedReading> aggregatedReadings;
-    private int aggregateInterval = 500;
     private LinkedList<LocationRecord> gpsData;
     private LinkedList<WiFiScan> wifiData;
+    private int aggregationTime = 0;
     private Timestamp timestamp;
     private String type = "";
 
-    public DataSet(File dataFile, String type, int aggregateInterval) {
-        this.type = type;
-        this.aggregateInterval = aggregateInterval;
+    public DataSet(File dataFile) {
         accelerometerData = new LinkedList<>();
         magnetometerData = new LinkedList<>();
         gyroscopeData = new LinkedList<>();
-        aggregatedReadings = new LinkedList<>();
         gpsData = new LinkedList<>();
         wifiData = new LinkedList<>();
         try {
@@ -41,7 +37,6 @@ public class DataSet {
                 parseLine(line);
             }
             bufferedReader.close();
-            aggregateReadings();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,7 +66,8 @@ public class DataSet {
         }
     }
 
-    public void aggregateReadings() {
+    public LinkedList<AggregatedReading> aggregateReadings(int aggregateInterval) {
+        LinkedList<AggregatedReading> aggregatedReadings = new LinkedList<>();
         Iterator<InertialSensorRecord> accI = accelerometerData.iterator();
         Iterator<InertialSensorRecord> gyroI = gyroscopeData.iterator();
         Iterator<InertialSensorRecord> magnI = magnetometerData.iterator();
@@ -86,6 +82,7 @@ public class DataSet {
             aggregatedReadings.add(aggregatedReading);
             time = maxTime;
         }
+        return aggregatedReadings;
     }
 
     public void toCSV() {
@@ -93,16 +90,19 @@ public class DataSet {
         InertialSensorRecord.toCSV(accelerometerData, "accelerometer", "accelerometer" + fileSuffix);
         InertialSensorRecord.toCSV(magnetometerData, "magnetometer", "magnetometer" + fileSuffix);
         InertialSensorRecord.toCSV(gyroscopeData, "gyroscope", "gyroscope" + fileSuffix);
-        AggregatedReading.toCSV(aggregatedReadings, fileSuffix, type);
+        AggregatedReading.toCSV(aggregateReadings(aggregationTime), fileSuffix, type);
+    }
+
+    public void setAggregationTime(int aggregationTime) {
+        this.aggregationTime = aggregationTime;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Timestamp getTimestamp() {
         return timestamp;
-    }
-
-
-    public LinkedList<AggregatedReading> getAggregatedReadings() {
-        return aggregatedReadings;
     }
 
 }

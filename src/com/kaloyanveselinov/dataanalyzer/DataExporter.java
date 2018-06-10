@@ -16,13 +16,17 @@ public class DataExporter {
             DataSet dataSet;
             switch (args.length) {
                 case 3:
-                    dataSet = new DataSet(file, args[1], Integer.parseInt(args[2]));
+                    dataSet = new DataSet(file);
+                    dataSet.setAggregationTime(Integer.parseInt(args[1]));
+                    dataSet.setType(args[1]);
                     break;
                 case 2:
-                    dataSet = new DataSet(file, "", Integer.parseInt(args[1]));
+                    dataSet = new DataSet(file);
+                    dataSet.setAggregationTime(Integer.parseInt(args[1]));
                     break;
                 default:
-                    dataSet = new DataSet(file, "", 500);
+                    dataSet = new DataSet(file);
+                    dataSet.setAggregationTime(500);
             }
             dataSet.toCSV();
         } else System.err.println("No such file");
