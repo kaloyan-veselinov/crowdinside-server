@@ -7,31 +7,33 @@ import java.io.File;
 import java.util.LinkedList;
 
 public class AnchorPointDecisionTree {
-   private LinkedList<AggregatedReading> aggregatedReadingsBuffer = new LinkedList<>();
+    private LinkedList<AggregatedReading> aggregatedReadingsBuffer = new LinkedList<>();
 
-    public enum AnchorPointType{
+    public enum AnchorPointType {
         STANDING, WALKING, STAIRS, ELEVATOR, ESCALATOR, UNKNOWN
     }
 
-    private boolean isInElevator(){return false;}
+    private boolean isInElevator() {
+        return false;
+    }
 
-    public AnchorPointType getAnchorPoint(AggregatedReading newReading){
+    public AnchorPointType getAnchorPoint(AggregatedReading newReading) {
         aggregatedReadingsBuffer.add(newReading);
-        if(isInElevator()) return AnchorPointType.ELEVATOR;
-        else if(newReading.getAccelerationVariance() < 0.1){
+        if (isInElevator()) return AnchorPointType.ELEVATOR;
+        else if (newReading.getAccelerationVariance() < 0.1) {
             return AnchorPointType.STANDING;
-        } else if(newReading.getAccYZCorrelation() < -0.06){
+        } else if (newReading.getAccYZCorrelation() < -0.06) {
             return AnchorPointType.STAIRS;
         } else return AnchorPointType.WALKING;
     }
 
     public static void main(String[] args) {
-        if (args.length != 1){
+        if (args.length != 1) {
             System.err.println("Usage: java DecisionTree filename.JSON");
             System.exit(-1);
         }
         File file = new File(args[0]);
-        if(file.exists() && !file.isDirectory()) {
+        if (file.exists() && !file.isDirectory()) {
             DataSet dataSet = new DataSet(file, "", 1000);
             AnchorPointDecisionTree tree = new AnchorPointDecisionTree();
             for (AggregatedReading aggregatedReading : dataSet.getAggregatedReadings()) {

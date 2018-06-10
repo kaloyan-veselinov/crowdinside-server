@@ -12,5 +12,6 @@
     <orderEntry type="library" name="commons-math3-3.6.1" level="project" />
     <orderEntry type="library" name="commons-csv-1.5" level="project" />
     <orderEntry type="library" name="commons-math3-3.6.1" level="project" />
+    <orderEntry type="library" name="statefulj-fsm" level="project" />
   </component>
 </module>
