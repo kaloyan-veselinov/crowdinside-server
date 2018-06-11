@@ -18,6 +18,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AggregatedReading {
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
     private Timestamp timestamp;
     private Timestamp startTimestamp;
     private Stat acceleration;
