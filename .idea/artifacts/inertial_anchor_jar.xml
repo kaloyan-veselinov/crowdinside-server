@@ -1,9 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="data-exporter:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/data_exporter_jar</output-path>
-    <root id="archive" name="data-exporter.jar">
+  <artifact type="jar" name="inertial-anchor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/inertial_anchor_jar</output-path>
+    <root id="archive" name="inertial-anchor.jar">
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/META-INF/MANIFEST.MF" />
       </element>
       <element id="module-output" name="crowdinside-server" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-math3-3.6.1.jar" path-in-jar="/" />

@@ -1,4 +1,4 @@
-package com.kaloyanveselinov.dataanalyzer;
+package com.kaloyanveselinov.anchorextraction.inertial;
 
 import com.kaloyanveselinov.datacollection.AggregatedReading;
 import com.kaloyanveselinov.datacollection.DataSet;

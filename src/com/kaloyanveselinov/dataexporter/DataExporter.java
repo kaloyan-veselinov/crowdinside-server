@@ -1,4 +1,4 @@
-package com.kaloyanveselinov.dataanalyzer;
+package com.kaloyanveselinov.dataexporter;
 
 import com.kaloyanveselinov.datacollection.DataSet;
 

@@ -1,4 +1,4 @@
-package com.kaloyanveselinov.dataanalyzer;
+package com.kaloyanveselinov.anchorextraction.inertial;
 
 import org.statefulj.fsm.FSM;
 import org.statefulj.fsm.model.Action;
