@@ -49,13 +49,13 @@ public class DataSet {
         JSONObject data = parsedLine.getJSONObject("data");
         switch (sensorType) {
             case "accelerometer":
-                accelerometerData.add(new InertialSensorRecord(data, timestamp));
+                accelerometerData.add(new InertialSensorRecord(data, this.timestamp, timestamp));
                 break;
             case "magnetometer":
-                magnetometerData.add(new InertialSensorRecord(data, timestamp));
+                magnetometerData.add(new InertialSensorRecord(data, this.timestamp, timestamp));
                 break;
             case "gyroscope":
-                gyroscopeData.add(new InertialSensorRecord(data, timestamp));
+                gyroscopeData.add(new InertialSensorRecord(data, this.timestamp, timestamp));
                 break;
             case "wifiAP":
                 wifiData.add(new WiFiScan(data, timestamp));
@@ -75,7 +75,7 @@ public class DataSet {
         long maxTime;
         while (accI.hasNext() || gyroI.hasNext() || magnI.hasNext()) {
             maxTime = time + aggregateInterval;
-            AggregatedReading aggregatedReading = new AggregatedReading(new Timestamp(time));
+            AggregatedReading aggregatedReading = new AggregatedReading(this.timestamp, new Timestamp(time));
             aggregatedReading.setAcceleration(accI, maxTime);
             aggregatedReading.setMagnetometer(magnI, maxTime);
             aggregatedReading.setGyroscope(gyroI, maxTime);

@@ -14,12 +14,14 @@ import java.util.List;
 
 public class InertialSensorRecord {
     private Timestamp timestamp;
+    private Timestamp startTimestamp;
     private Vector3D vector;
 
-    public InertialSensorRecord(JSONObject sensorData, Timestamp timestamp) {
+    public InertialSensorRecord(JSONObject sensorData, Timestamp startTimestamp, Timestamp timestamp) {
         try {
             this.vector = new Vector3D(sensorData.getFloat("xValue"), sensorData.getFloat("yValue"), sensorData.getFloat("zValue"));
             this.timestamp = timestamp;
+            this.startTimestamp = startTimestamp;
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -31,7 +33,7 @@ public class InertialSensorRecord {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
             CSVPrinter accelerationPrinter = new CSVPrinter(bufferedWriter, CSVFormat.EXCEL.withHeader(HEADERS));
             for (InertialSensorRecord sensorRecord : inertialSensorRecordList) {
-                accelerationPrinter.printRecord(sensorRecord.timestamp.getTime(), sensorRecord.getX(), sensorRecord.getY(), sensorRecord.getZ());
+                accelerationPrinter.printRecord(sensorRecord.timestamp.getTime() - sensorRecord.startTimestamp.getTime(), sensorRecord.getX(), sensorRecord.getY(), sensorRecord.getZ());
             }
             bufferedWriter.close();
         } catch (IOException e) {

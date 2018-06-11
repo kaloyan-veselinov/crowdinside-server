@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="crowdinside-server:jar" />
+      <artifact name="data-exporter:jar" />
+      <artifact name="decision-tree:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/crowdinside_server_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/data_exporter_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowdinside-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/crowdinside-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,12 +36,12 @@
       <file leaf-file-name="DataSet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+            <state relative-caret-position="74">
+              <caret line="77" column="88" selection-start-line="77" selection-start-column="88" selection-end-line="77" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4123#4124#0" expanded="true" />
-                <element signature="e#4176#4177#0" expanded="true" />
+                <element signature="e#4128#4129#0" expanded="true" />
+                <element signature="e#4182#4183#0" expanded="true" />
                 <element signature="e#4061#4062#0" expanded="true" />
                 <element signature="e#4093#4094#0" expanded="true" />
               </folding>
@@ -41,72 +49,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataExporter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElevatorFSM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElevatorFSMTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnchorPointDecisionTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Elevator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/Elevator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AggregatedReading.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+            <state relative-caret-position="-759">
+              <caret line="97" column="75" selection-start-line="97" selection-start-column="75" selection-end-line="97" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#6951#6952#0" expanded="true" />
+                <element signature="e#7022#7023#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,8 +66,20 @@
       <file leaf-file-name="InertialSensorRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="425">
+              <caret line="35" column="118" selection-start-line="35" selection-start-column="118" selection-end-line="35" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnchorPointDecisionTree.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,14 +113,14 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/LocationRecord.java" />
-        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" />
-        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/Elevator.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSM.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java" />
-        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java" />
       </list>
     </option>
   </component>
@@ -171,8 +134,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -192,6 +155,24 @@
               <item name="crowdinside-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="crowdinside-server" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crowdinside-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crowdinside-server" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crowdinside-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crowdinside-server" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crowdinside-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crowdinside-server" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="decision_tree_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crowdinside-server" type="b2602c69:ProjectViewProjectNode" />
@@ -232,7 +213,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -242,18 +223,20 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.kaloyanveselinov.dataanalyzer" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Kaloyan VESELINOV\Documents\Code\crowdinside-server\src\META-INF\DataExporter" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/out/production/crowdinside-server/com/kaloyanveselinov/dataanalyzer" />
-      <recent name="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer" />
-      <recent name="$PROJECT_DIR$/libs" />
+      <recent name="$PROJECT_DIR$/out/artifacts/DataAnalyzer_jar" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Kaloyan VESELINOV\Documents\Code\crowdinside-server" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/out/artifacts/DataAnalyzer_jar" />
+      <recent name="$PROJECT_DIR$/out/production/crowdinside-server/com/kaloyanveselinov/dataanalyzer" />
+      <recent name="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer" />
+      <recent name="$PROJECT_DIR$/libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -268,11 +251,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ElevatorFSMTest">
+  <component name="RunManager" selected="Application.AnchorPointDecisionTree">
     <configuration name="AnchorPointDecisionTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kaloyanveselinov.dataanalyzer.AnchorPointDecisionTree" />
       <module name="crowdinside-server" />
-      <option name="PROGRAM_PARAMETERS" value="walking.JSON" />
+      <option name="PROGRAM_PARAMETERS" value="elevator1.JSON" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -306,8 +289,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ElevatorFSMTest" />
         <item itemvalue="Application.AnchorPointDecisionTree" />
+        <item itemvalue="Application.ElevatorFSMTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -332,7 +315,7 @@
       <workItem from="1528439510639" duration="340000" />
       <workItem from="1528468890339" duration="4211000" />
       <workItem from="1528637225614" duration="5982000" />
-      <workItem from="1528663008502" duration="945000" />
+      <workItem from="1528663008502" duration="9747000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -341,18 +324,25 @@
       <option name="project" value="LOCAL" />
       <updated>1525707158098</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactoring DataSet">
+      <created>1528664083693</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528664083693</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57846000" />
+    <option name="totallyTimeSpent" value="66648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32827586" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -360,11 +350,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33146068" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33146068" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32932165" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31879196" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25704697" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -379,7 +369,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32827586" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,42 +378,25 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Parsed data set + adding timestamp to data constructors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parsed data set + adding timestamp to data constructors" />
+    <MESSAGE value="Refactoring DataSet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring DataSet" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="86" selection-start-line="34" selection-start-column="86" selection-end-line="34" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
-            <element signature="e#4176#4177#0" expanded="true" />
+            <element signature="e#4128#4129#0" expanded="true" />
+            <element signature="e#4182#4183#0" expanded="true" />
             <element signature="e#4061#4062#0" expanded="true" />
             <element signature="e#4093#4094#0" expanded="true" />
           </folding>
@@ -611,23 +583,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aggregated_2018-05-15_16-01-55.csv" />
     <entry file="file://$PROJECT_DIR$/stairs1.JSON" />
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stairs2.JSON">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -644,46 +599,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aggregated_2018-06-02_17-09-44.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elevator2.JSON">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="935">
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
-            <element signature="e#4176#4177#0" expanded="true" />
-            <element signature="e#4061#4062#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,13 +633,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="35" column="118" selection-start-line="35" selection-start-column="118" selection-end-line="35" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-759">
+          <caret line="97" column="75" selection-start-line="97" selection-start-column="75" selection-end-line="97" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6951#6952#0" expanded="true" />
+            <element signature="e#7022#7023#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="77" column="88" selection-start-line="77" selection-start-column="88" selection-end-line="77" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4128#4129#0" expanded="true" />
+            <element signature="e#4182#4183#0" expanded="true" />
+            <element signature="e#4061#4062#0" expanded="true" />
+            <element signature="e#4093#4094#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/DataExporter/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>crowdinside-server:jar</last-edited>
+          <last-edited>decision-tree:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

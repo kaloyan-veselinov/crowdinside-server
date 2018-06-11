@@ -9,6 +9,7 @@ public class ElevatorFSMTest {
     private static boolean testElevatorUp() throws TooBusyException {
         Elevator elevator = new Elevator();
         fsm.onEvent(elevator, ElevatorFSM.notchUp);
+        fsm.onEvent(elevator, ElevatorFSM.silence);
         fsm.onEvent(elevator, ElevatorFSM.notchDown);
         return elevator.getState().equals(ElevatorFSM.elevatorUp.getName());
     }
@@ -16,6 +17,7 @@ public class ElevatorFSMTest {
     private static boolean testElevatorDown() throws TooBusyException {
         Elevator elevator = new Elevator();
         fsm.onEvent(elevator, ElevatorFSM.notchDown);
+        fsm.onEvent(elevator, ElevatorFSM.silence);
         fsm.onEvent(elevator, ElevatorFSM.notchUp);
         return elevator.getState().equals(ElevatorFSM.elevatorDown.getName());
     }
