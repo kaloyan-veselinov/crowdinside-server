@@ -4,7 +4,7 @@ import org.statefulj.persistence.annotations.State;
 
 import java.sql.Timestamp;
 
-public class Step {
+public class StepStateful {
     @State
     private String state;
     private Timestamp startTime;
