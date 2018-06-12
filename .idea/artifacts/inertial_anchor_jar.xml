@@ -8,7 +8,6 @@
       <element id="module-output" name="crowdinside-server" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-math3-3.6.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-csv-1.5.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/libs/series-reducer.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/statefulj-fsm.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/JSON-java.jar" path-in-jar="/" />
     </root>

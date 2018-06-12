@@ -3,15 +3,13 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="data-exporter:jar" />
-      <artifact name="decision-tree:jar" />
+      <artifact name="inertial-anchor:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/data_exporter_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/data_exporter_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/inertial_anchor_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/inertial_anchor_jar.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,69 +23,7 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7739251">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Elevator.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/Elevator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="StepFSM.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="309">
-                  <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Step.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#300#301#0" expanded="true" />
-                    <element signature="e#332#333#0" expanded="true" />
-                    <element signature="e#385#386#0" expanded="true" />
-                    <element signature="e#427#428#0" expanded="true" />
-                    <element signature="e#464#465#0" expanded="true" />
-                    <element signature="e#494#495#0" expanded="true" />
-                    <element signature="e#543#544#0" expanded="true" />
-                    <element signature="e#581#582#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="ElevatorFSM.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSM.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-436">
-                  <caret line="39" column="5" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="39" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,7 +79,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1050" />
@@ -153,7 +89,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,6 +139,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,7 +149,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -315,6 +251,7 @@
       <workItem from="1528468890339" duration="4211000" />
       <workItem from="1528637225614" duration="5982000" />
       <workItem from="1528663008502" duration="16048000" />
+      <workItem from="1528811755134" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -348,15 +285,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72949000" />
+    <option name="totallyTimeSpent" value="73021000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32827586" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -364,12 +299,13 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33146068" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33146068" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32932165" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28389263" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28379828" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -381,8 +317,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32827586" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,16 +341,7 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
@@ -436,16 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
@@ -493,16 +411,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java" />
     <entry file="file://$PROJECT_DIR$/JetBrains.gitignore" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -561,22 +470,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aggregated_2018-06-02_17-09-44.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elevator2.JSON">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/aggregated_2018-06-02_17-09-44.csv" />
+    <entry file="file://$PROJECT_DIR$/elevator2.JSON" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -588,128 +484,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="77" column="88" selection-start-line="77" selection-start-column="88" selection-end-line="77" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4128#4129#0" expanded="true" />
-            <element signature="e#4182#4183#0" expanded="true" />
-            <element signature="e#4061#4062#0" expanded="true" />
-            <element signature="e#4093#4094#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/DataExporter/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSMTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/AnchorPointDecisionTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/DataExporter/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSMTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/AnchorPointDecisionTree.java" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-932">
           <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#6951#6952#0" expanded="true" />
-            <element signature="e#7022#7023#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/MyPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/Elevator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-436">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/MyPoint.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/Elevator.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSM.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" />
   </component>
   <component name="masterDetails">
     <states>
@@ -721,7 +515,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -729,7 +522,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -741,7 +534,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Python 3.5 interpreter library</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -753,7 +546,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -770,7 +563,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -790,7 +582,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>series-reducer</last-edited>
+          <last-edited>commons-csv-1.5</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
