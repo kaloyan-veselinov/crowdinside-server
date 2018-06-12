@@ -8,9 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,8 +39,8 @@
       <file leaf-file-name="StepFSM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="141">
+              <caret line="89" column="83" selection-start-line="89" selection-start-column="83" selection-end-line="89" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -50,8 +48,8 @@
       <file leaf-file-name="StepDetector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="868">
-              <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
+            <state relative-caret-position="588">
+              <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,7 +113,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="25" />
     <option name="width" value="960" />
     <option name="height" value="1055" />
@@ -304,7 +302,7 @@
       <workItem from="1528812308641" duration="52000" />
       <workItem from="1528812390762" duration="579000" />
       <workItem from="1528813284493" duration="517000" />
-      <workItem from="1528813834000" duration="8961000" />
+      <workItem from="1528813834000" duration="9229000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -334,14 +332,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528722140752</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Step counter kind of works">
+      <created>1528837526919</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1528837526924</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83523000" />
+    <option name="totallyTimeSpent" value="83791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="960" height="1055" extended-state="4" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -389,7 +394,8 @@
     <MESSAGE value="Refactoring DataSet" />
     <MESSAGE value="Anchor points decision tree kind of working" />
     <MESSAGE value="Restructuring project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructuring project" />
+    <MESSAGE value="Step counter kind of works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step counter kind of works" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -573,8 +579,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="31" column="71" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
+        <state relative-caret-position="588">
+          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -583,8 +589,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="141">
+          <caret line="89" column="83" selection-start-line="89" selection-start-column="83" selection-end-line="89" selection-end-column="83" />
         </state>
       </provider>
     </entry>
