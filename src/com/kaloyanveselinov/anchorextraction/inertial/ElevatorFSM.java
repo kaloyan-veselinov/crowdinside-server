@@ -1,6 +1,8 @@
 package com.kaloyanveselinov.anchorextraction.inertial;
 
+import com.kaloyanveselinov.datacollection.AggregatedReading;
 import org.statefulj.fsm.FSM;
+import org.statefulj.fsm.TooBusyException;
 import org.statefulj.fsm.model.Action;
 import org.statefulj.fsm.model.State;
 import org.statefulj.fsm.model.impl.StateImpl;
@@ -17,11 +19,11 @@ class ElevatorFSM extends FSM<Elevator> {
     static String silence = "Silence event";
 
     // States
-    static State<Elevator> standing = new StateImpl<>("Standing");
-    static State<Elevator> overWeight = new StateImpl<>("Over-weight");
-    static State<Elevator> weightLoss = new StateImpl<>("Weight-loss");
-    static State<Elevator> goingUp = new StateImpl<>("Going up");
-    static State<Elevator> goingDown = new StateImpl<>("Going down");
+    private static State<Elevator> standing = new StateImpl<>("Standing");
+    private static State<Elevator> overWeight = new StateImpl<>("Over-weight");
+    private static State<Elevator> weightLoss = new StateImpl<>("Weight-loss");
+    private static State<Elevator> goingUp = new StateImpl<>("Going up");
+    private static State<Elevator> goingDown = new StateImpl<>("Going down");
     static State<Elevator> elevatorUp = new StateImpl<>("Elevator up", true);
     static State<Elevator> elevatorDown = new StateImpl<>("Elevator down", true);
     private static final State<Elevator> START_STATE = standing;
@@ -40,8 +42,8 @@ class ElevatorFSM extends FSM<Elevator> {
     }
 
     // Actions
-    private static ElevatorAction<Elevator> inElevatorUp = new ElevatorAction<>("In elevator, going up");
-    private static ElevatorAction<Elevator> inElevatorDown =  new ElevatorAction<>("In elevator, going down");
+    private static Action<Elevator> inElevatorUp = new ElevatorAction<>("In elevator, going up");
+    private static Action<Elevator> inElevatorDown =  new ElevatorAction<>("In elevator, going down");
 
     private static List<State<Elevator>> getStates(){
         List<State<Elevator>> states = new LinkedList<>();
@@ -79,5 +81,16 @@ class ElevatorFSM extends FSM<Elevator> {
     ElevatorFSM() {
         super("Elevator FSM", new MemoryPersisterImpl<>(getStates(), START_STATE));
         initTransitions();
+    }
+
+    boolean isInElevator(Elevator elevator, AggregatedReading reading) throws TooBusyException {
+        double accMagn = reading.getAccelerationMagnitude();
+        if (accMagn < 9.2)
+            onEvent(elevator, ElevatorFSM.notchDown);
+        else if (accMagn > 10.4)
+            onEvent(elevator, ElevatorFSM.notchUp);
+        else if (accMagn > 9.7 && accMagn < 9.95)
+            onEvent(elevator, ElevatorFSM.silence);
+        return ElevatorFSM.elevatorDown.getName().equals(elevator.getState()) || ElevatorFSM.elevatorUp.getName().equals(elevator.getState());
     }
 }

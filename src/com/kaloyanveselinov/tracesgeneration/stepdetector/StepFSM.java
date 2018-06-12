@@ -39,11 +39,11 @@ class StepFSM extends FSM<StepStateful> {
     // Actions
     private Action<StepStateful> startStep = (stepStateful, s, objects) -> {
         stepStateful.setStartTime((Timestamp) objects[0]);
-        System.out.println("Starting stepStateful at " + stepStateful.getStartTime());
+        System.out.println("Starting step at " + stepStateful.getStartTime());
     };
     private Action<StepStateful> endStep = (stepStateful, s, objects) -> {
         stepStateful.setEndTime((Timestamp) objects[0]);
-        System.out.println("Ending stepStateful at " + stepStateful.getEndTime());
+        System.out.println("Ending step at " + stepStateful.getEndTime());
     };
 
     StepFSM() {
