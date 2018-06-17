@@ -87,7 +87,7 @@ class StepFSM extends FSM<StepStateful> {
         s6.addTransition(ltThr, s0, null);
     }
 
-    boolean updateStateOnReading(StepStateful stepStateful, AggregatedReading aggregatedReading) throws TooBusyException {
+    void updateStateOnReading(StepStateful stepStateful, AggregatedReading aggregatedReading) throws TooBusyException {
         double accMagn = aggregatedReading.getAccelerationMagnitude();
         Timestamp timestamp = aggregatedReading.getTimestamp();
 
@@ -100,7 +100,5 @@ class StepFSM extends FSM<StepStateful> {
         else onEvent(stepStateful, htNegPeekThr, timestamp);
 
         if (accMagn > NEG_THR) onEvent(stepStateful, htNegThr, timestamp);
-
-        return s6.getName().equals(stepStateful.getState());
     }
 }
