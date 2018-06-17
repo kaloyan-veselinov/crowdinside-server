@@ -13,12 +13,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 class StepFSM extends FSM<StepStateful> {
+    private StepDetectedCallback callback;
 
     // Thresholds
-    private static final double THR = 11;
-    private static final double POS_PEEK_THR = 12;
-    private static final double NEG_PEEK_THR = 8.4;
-    private static final double NEG_THR = 9;
+    private static final double THR = 10.4;
+    private static final double POS_PEEK_THR = 11.6;
+    private static final double NEG_PEEK_THR = 8.8;
+    private static final double NEG_THR = 9.2;
 
     // Events
     private static final String ltThr = "Input < Thr";
@@ -36,6 +37,7 @@ class StepFSM extends FSM<StepStateful> {
     private static final State<StepStateful> s4 = new StateImpl<>("S4");
     private static final State<StepStateful> s5 = new StateImpl<>("S5");
     private static final State<StepStateful> s6 = new StateImpl<>("S6", true);
+
     // Actions
     private Action<StepStateful> startStep = (stepStateful, s, objects) -> {
         stepStateful.setStartTime((Timestamp) objects[0]);
@@ -44,11 +46,13 @@ class StepFSM extends FSM<StepStateful> {
     private Action<StepStateful> endStep = (stepStateful, s, objects) -> {
         stepStateful.setEndTime((Timestamp) objects[0]);
         System.out.println("Ending step at " + stepStateful.getEndTime());
+        callback.onStepDetected();
     };
 
-    StepFSM() {
+    StepFSM(StepDetectedCallback callback) {
         super("StepStateful FSM", new MemoryPersisterImpl<>(getStates(), s0));
         initTransitions();
+        this.callback = callback;
     }
 
     private static List<State<StepStateful>> getStates() {

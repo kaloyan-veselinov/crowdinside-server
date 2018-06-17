@@ -5,11 +5,14 @@ import com.kaloyanveselinov.datacollection.DataSet;
 import org.statefulj.fsm.TooBusyException;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class StepDetector {
+public class StepDetector implements StepDetectedCallback{
     private StepStateful stepStateful = new StepStateful();
-    private StepFSM fsm = new StepFSM();
+    private StepFSM fsm = new StepFSM(this);
+    private LinkedList<AggregatedReading> buffer = new LinkedList<>();
+    private int counter = 0;
 
     public static void main(String[] args) throws TooBusyException {
         if (args.length != 1) {
@@ -19,17 +22,32 @@ public class StepDetector {
         File file = new File(args[0]);
         if (file.exists() && !file.isDirectory()) {
             DataSet dataSet = new DataSet(file);
-            new StepDetector().filterSteps(dataSet.aggregateReadings(100));
+            StepDetector detector = new StepDetector();
+            for(AggregatedReading reading: dataSet.aggregateReadings(100))
+                detector.onNewReading(reading);
+            System.out.println(detector.counter);
         } else System.err.println("No such file");
     }
 
-    private LinkedList<AggregatedReading> filterSteps(LinkedList<AggregatedReading> readings) throws TooBusyException {
-        int i = 0;
-        for (AggregatedReading reading : readings) {
-            if (fsm.updateStateOnReading(stepStateful, reading))
-                i++;
+    private void onNewReading(AggregatedReading reading) throws TooBusyException {
+        buffer.add(reading);
+        fsm.updateStateOnReading(stepStateful, reading);
+    }
+
+    private LinkedList<AggregatedReading> getStepReading(){
+        Iterator<AggregatedReading> it = buffer.descendingIterator();
+        LinkedList<AggregatedReading> stepReadings = new LinkedList<>();
+        AggregatedReading next;
+        while(it.hasNext() && !(next = it.next()).getTimestamp().equals(stepStateful.getStartTime())){
+            stepReadings.add(next);
         }
-        System.out.println(i);
-        return new LinkedList<>();
+        return stepReadings;
+    }
+
+    @Override
+    public void onStepDetected() {
+        counter++;
+        new Step(getStepReading());
+        buffer.clear();
     }
 }
