@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 class StepFSM extends FSM<StepStateful> {
-    private StepDetectedCallback callback;
+    private StepDetector detector;
 
     // Thresholds
     private static final double THR = 10.4;
@@ -46,13 +46,13 @@ class StepFSM extends FSM<StepStateful> {
     private Action<StepStateful> endStep = (stepStateful, s, objects) -> {
         stepStateful.setEndTime((Timestamp) objects[0]);
         System.out.println("Ending step at " + stepStateful.getEndTime());
-        callback.onStepDetected();
+        detector.onStepDetected();
     };
 
-    StepFSM(StepDetectedCallback callback) {
+    StepFSM(StepDetector detector) {
         super("StepStateful FSM", new MemoryPersisterImpl<>(getStates(), s0));
         initTransitions();
-        this.callback = callback;
+        this.detector = detector;
     }
 
     private static List<State<StepStateful>> getStates() {

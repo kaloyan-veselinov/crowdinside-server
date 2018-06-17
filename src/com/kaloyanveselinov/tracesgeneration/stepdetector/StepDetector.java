@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class StepDetector implements StepDetectedCallback{
+public class StepDetector {
     private StepStateful stepStateful = new StepStateful();
     private StepFSM fsm = new StepFSM(this);
     private LinkedList<AggregatedReading> buffer = new LinkedList<>();
@@ -44,7 +44,6 @@ public class StepDetector implements StepDetectedCallback{
         return stepReadings;
     }
 
-    @Override
     public void onStepDetected() {
         counter++;
         new Step(getStepReading());
