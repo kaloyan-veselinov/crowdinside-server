@@ -10,9 +10,7 @@ import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -36,7 +34,7 @@ class Step {
 
     {
         try {
-            smo = (SMO) weka.core.SerializationHelper.read("res/SMO.model");
+            smo = (SMO) weka.core.SerializationHelper.read(getClass().getClassLoader().getResourceAsStream("SMO.model"));
         } catch (Exception e) {
             e.printStackTrace();
         }
