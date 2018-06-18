@@ -4,7 +4,7 @@ import com.kaloyanveselinov.datacollection.AggregatedReading;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
-import weka.classifiers.Classifier;
+import weka.classifiers.functions.SMO;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instance;
@@ -30,34 +30,57 @@ class Step {
     private Attribute rms = new Attribute("RMS");
     private Attribute rmsTimesDuration = new Attribute("RMS*duration");
     private Attribute gait = new Attribute("gait", getGaits());
-    private Instances instances = new Instances("Gaits", getAttributes(), 0);
+    private Instances instances = new Instances("Gaits", getAttributes(), 1);
 
-    private Classifier cls;
+    private SMO smo;
 
     {
         try {
-            cls = (Classifier) weka.core.SerializationHelper.read("res/SMO.model");
+            smo = (SMO) weka.core.SerializationHelper.read("res/SMO.model");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    Step(LinkedList<AggregatedReading> stepReadings){
+    Step(LinkedList<AggregatedReading> stepReadings) {
         stepDuration = stepReadings.getFirst().getTimestamp().getTime() - stepReadings.getLast().getTimestamp().getTime();
         timestamp = stepReadings.getLast().getTimestamp();
-        for (AggregatedReading reading: stepReadings)
+        for (AggregatedReading reading : stepReadings)
             stat.addValue(reading.getAccelerationMagnitude());
+        instances.add(buildInstance());
+        try {
+            instances.setClass(gait);
+            double value = smo.classifyInstance(instances.get(0));
+            System.out.println(instances.classAttribute().value((int) value));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private List<String> getGaits(){
+    static void toCSV(List<Step> steps, String filename, String referenceGait) {
+        BufferedWriter bw;
+        try {
+            String[] headers = {"timestamp", "duration", "acceleration variance", "acceleration peek", "acceleration max-min", "RMS", "RMS*duration", "gait"};
+            bw = new BufferedWriter(new FileWriter(filename));
+            CSVPrinter printer = new CSVPrinter(bw, CSVFormat.EXCEL.withHeader(headers));
+            for (Step step : steps) {
+                step.printStep(printer, referenceGait);
+            }
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<String> getGaits() {
         LinkedList<String> gaits = new LinkedList<>();
-        gaits.add("walking");
-        gaits.add("running");
         gaits.add("jogging");
+        gaits.add("running");
+        gaits.add("walking");
         return gaits;
     }
 
-    private ArrayList<Attribute> getAttributes(){
+    private ArrayList<Attribute> getAttributes() {
         ArrayList<Attribute> attributes = new ArrayList<>(7);
         attributes.add(duration);
         attributes.add(accVar);
@@ -69,26 +92,7 @@ class Step {
         return attributes;
     }
 
-    enum Gait {
-        WALKING(0.74), JOGGING(1.01), RUNNING(1.70);
-
-        double stepSize;
-        Gait(double stepSize){
-            this.stepSize = stepSize;
-        }
-    }
-
-    double getDistance(){
-        return getGait().stepSize;
-    }
-
-    private Gait getGait(){
-        if(stat.getMax() < 18.63) return Gait.WALKING;
-        else if(stat.getQuadraticMean() < 23.99) return Gait.JOGGING;
-        else return Gait.RUNNING;
-    }
-
-    private Instance buildInstance(){
+    private Instance buildInstance() {
         Instance instance = new DenseInstance(6);
         instance.setValue(duration, stepDuration);
         instance.setValue(accVar, stat.getVariance());
@@ -108,21 +112,6 @@ class Step {
                 stat.getQuadraticMean(),
                 stat.getQuadraticMean() * stepDuration,
                 referenceGait);
-    }
-
-    static void toCSV(List<Step> steps, String filename, String referenceGait){
-        BufferedWriter bw;
-        try {
-            String[] headers = {"timestamp", "duration", "acceleration variance", "acceleration peek", "acceleration max-min", "RMS", "RMS*duration", "gait"};
-            bw = new BufferedWriter(new FileWriter(filename));
-            CSVPrinter printer = new CSVPrinter(bw, CSVFormat.EXCEL.withHeader(headers));
-            for (Step step: steps) {
-                step.printStep(printer, referenceGait);
-            }
-            bw.close();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
 }

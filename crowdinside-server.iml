@@ -15,5 +15,7 @@
     <orderEntry type="library" name="statefulj-fsm" level="project" />
     <orderEntry type="library" name="series-reducer" level="project" />
     <orderEntry type="library" name="statefulj-fsm" level="project" />
+    <orderEntry type="library" name="weka" level="project" />
+    <orderEntry type="library" name="weka (2)" level="project" />
   </component>
 </module>
