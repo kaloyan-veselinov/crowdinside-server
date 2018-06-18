@@ -46,7 +46,7 @@ public class StepDetector {
         return stepReadings;
     }
 
-    public void onStepDetected() {
+    void onStepDetected() {
         steps.add(new Step(getStepReading()));
         buffer.clear();
     }
