@@ -17,11 +17,31 @@ class Step {
     private Timestamp timestamp;
     private DescriptiveStatistics stat = new DescriptiveStatistics();
 
+
     Step(LinkedList<AggregatedReading> stepReadings){
         stepDuration = stepReadings.getFirst().getTimestamp().getTime() - stepReadings.getLast().getTimestamp().getTime();
         timestamp = stepReadings.getLast().getTimestamp();
         for (AggregatedReading reading: stepReadings)
             stat.addValue(reading.getAccelerationMagnitude());
+    }
+
+    enum Gait {
+        WALKING(0.74), JOGGING(1.01), RUNNING(1.70);
+
+        double stepSize;
+        Gait(double stepSize){
+            this.stepSize = stepSize;
+        }
+    }
+
+    double getDistance(){
+        return getGait().stepSize;
+    }
+
+    private Gait getGait(){
+        if(stat.getMax() < 18.63) return Gait.WALKING;
+        else if(stat.getQuadraticMean() < 23.99) return Gait.JOGGING;
+        else return Gait.RUNNING;
     }
 
     private void printStep(CSVPrinter printer, String referenceGait) throws IOException {
