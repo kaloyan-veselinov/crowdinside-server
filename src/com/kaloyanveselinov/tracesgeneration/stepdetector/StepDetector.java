@@ -12,11 +12,11 @@ public class StepDetector {
     private StepStateful stepStateful = new StepStateful();
     private StepFSM fsm = new StepFSM(this);
     private LinkedList<AggregatedReading> buffer = new LinkedList<>();
-    private int counter = 0;
+    private LinkedList<Step> steps = new LinkedList<>();
 
     public static void main(String[] args) throws TooBusyException {
-        if (args.length != 1) {
-            System.err.println("Usage: java DecisionTree filename.JSON");
+        if (args.length != 2) {
+            System.err.println("Usage: java DecisionTree filename.JSON gait");
             System.exit(-1);
         }
         File file = new File(args[0]);
@@ -25,7 +25,9 @@ public class StepDetector {
             StepDetector detector = new StepDetector();
             for(AggregatedReading reading: dataSet.aggregateReadings(100))
                 detector.onNewReading(reading);
-            System.out.println(detector.counter);
+            System.out.println(detector.steps.size() + " steps detected");
+            String fileSuffix = "_" + dataSet.getTimestamp().toString().substring(0, dataSet.getTimestamp().toString().length() - 4).replaceAll(":", "-").replaceAll(" ", "_") + ".csv";
+            Step.toCSV(detector.steps, args[1] + fileSuffix, args[1]);
         } else System.err.println("No such file");
     }
 
@@ -45,8 +47,7 @@ public class StepDetector {
     }
 
     public void onStepDetected() {
-        counter++;
-        new Step(getStepReading());
+        steps.add(new Step(getStepReading()));
         buffer.clear();
     }
 }
