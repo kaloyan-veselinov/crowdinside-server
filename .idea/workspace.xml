@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,13 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StepFSM.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java">
+      <file leaf-file-name="StepStateful.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="589">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#522#523#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
+                <element signature="e#880#881#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
+                <element signature="e#1078#1079#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,6 +97,7 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" />
       </list>
     </option>
   </component>
@@ -299,7 +310,7 @@
       <workItem from="1529268075582" duration="10050000" />
       <workItem from="1529325278187" duration="11879000" />
       <workItem from="1529350375333" duration="2712000" />
-      <workItem from="1530111566343" duration="1580000" />
+      <workItem from="1530111566343" duration="1979000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -347,7 +358,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111664000" />
+    <option name="totallyTimeSpent" value="112063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="960" height="1055" extended-state="4" />
@@ -534,7 +545,6 @@
     <entry file="file://$PROJECT_DIR$/src/META-INF/DataExporter/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/MyPoint.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -604,6 +614,26 @@
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
           </folding>
         </state>
       </provider>
