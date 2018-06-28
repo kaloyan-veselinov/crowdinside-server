@@ -10,16 +10,26 @@ import java.sql.Timestamp;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Class representing a data set collected with the Android application
+ *
+ * @author Kaloyan Veselinov
+ * @version 2.0
+ */
 public class DataSet {
     private LinkedList<InertialSensorRecord> accelerometerData;
     private LinkedList<InertialSensorRecord> magnetometerData;
     private LinkedList<InertialSensorRecord> gyroscopeData;
     private LinkedList<LocationRecord> gpsData;
     private LinkedList<WiFiScan> wifiData;
-    private int aggregationTime = 0;
+    private int aggregationTime = 0; // for data exporter
     private Timestamp timestamp;
     private String type = "";
 
+    /**
+     * Constructor for a new data set from a provided JSON file containing raw sensor values
+     * @param dataFile the file containing the data set
+     */
     public DataSet(File dataFile) {
         accelerometerData = new LinkedList<>();
         magnetometerData = new LinkedList<>();
@@ -42,6 +52,10 @@ public class DataSet {
         }
     }
 
+    /**
+     * Parses a line of the data set file and adds the value to the relevant raw data list
+     * @param line the line to parse
+     */
     private void parseLine(String line) {
         JSONObject parsedLine = new JSONObject(line);
         String sensorType = parsedLine.getString("sensorType");
@@ -66,6 +80,11 @@ public class DataSet {
         }
     }
 
+    /**
+     * Aggregates raw readings in order to group sensor values and reduce noise
+     * @param aggregateInterval the aggregation interval in milliseconds
+     * @return a list of AggregatedReadings
+     */
     public LinkedList<AggregatedReading> aggregateReadings(int aggregateInterval) {
         LinkedList<AggregatedReading> aggregatedReadings = new LinkedList<>();
         Iterator<InertialSensorRecord> accI = accelerometerData.iterator();
@@ -85,6 +104,9 @@ public class DataSet {
         return aggregatedReadings;
     }
 
+    /**
+     * Exports the data set to a CSV file (used in Weka training)
+     */
     public void toCSV() {
         String fileSuffix = "_" + timestamp.toString().substring(0, timestamp.toString().length() - 4).replaceAll(":", "-").replaceAll(" ", "_") + ".csv";
         InertialSensorRecord.toCSV(accelerometerData, "accelerometer", "accelerometer" + fileSuffix);
