@@ -3,7 +3,6 @@ package com.kaloyanveselinov.anchorextraction.inertial;
 import com.kaloyanveselinov.datacollection.AggregatedReading;
 import com.kaloyanveselinov.datacollection.DataSet;
 import org.statefulj.fsm.TooBusyException;
-
 import java.io.File;
 
 /**

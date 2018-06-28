@@ -11,12 +11,19 @@ import org.statefulj.persistence.memory.MemoryPersisterImpl;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * A FSM to detect elevator acceleration pattern using the Statefulj library
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ * @see <a href="http://www.statefulj.org/fsm/"></a>
+ */
 class ElevatorFSM extends FSM<ElevatorStateful> {
 
     // Events
-    static String notchUp = "Notch up";
-    static String notchDown = "Notch down";
-    static String silence = "Silence event";
+    private static String notchUp = "Notch up";
+    private static String notchDown = "Notch down";
+    private static String silence = "Silence event";
 
     // States
     private static State<ElevatorStateful> standing = new StateImpl<>("Standing");
@@ -24,8 +31,8 @@ class ElevatorFSM extends FSM<ElevatorStateful> {
     private static State<ElevatorStateful> weightLoss = new StateImpl<>("Weight-loss");
     private static State<ElevatorStateful> goingUp = new StateImpl<>("Going up");
     private static State<ElevatorStateful> goingDown = new StateImpl<>("Going down");
-    static State<ElevatorStateful> elevatorUp = new StateImpl<>("ElevatorStateful up", true);
-    static State<ElevatorStateful> elevatorDown = new StateImpl<>("ElevatorStateful down", true);
+    private static State<ElevatorStateful> elevatorUp = new StateImpl<>("ElevatorStateful up", true);
+    private static State<ElevatorStateful> elevatorDown = new StateImpl<>("ElevatorStateful down", true);
     private static final State<ElevatorStateful> START_STATE = standing;
 
     // Action builder
@@ -78,11 +85,21 @@ class ElevatorFSM extends FSM<ElevatorStateful> {
         elevatorDown.addTransition(silence, START_STATE, null);
     }
 
+    /**
+     * Constructor for a new ElevatorFMS
+     */
     ElevatorFSM() {
         super("ElevatorStateful FSM", new MemoryPersisterImpl<>(getStates(), START_STATE));
         initTransitions();
     }
 
+    /**
+     * Updates the state after a new reading has arrived and detects the elevator pattern
+     * @param elevatorStateful the Statefulj stateful object to update
+     * @param reading the new reading
+     * @return true if the elevator pattern has been detected, false otherwise
+     * @throws TooBusyException if an error has occurred in Statefulj
+     */
     boolean isInElevator(ElevatorStateful elevatorStateful, AggregatedReading reading) throws TooBusyException {
         double accMagn = reading.getAccelerationMagnitude();
         if (accMagn < 9.2)
