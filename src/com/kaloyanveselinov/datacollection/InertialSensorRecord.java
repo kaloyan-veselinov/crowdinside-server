@@ -12,12 +12,24 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class InertialSensorRecord {
+/**
+ * Class for raw inertial sensor data parsed from the JSON data set
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ */
+class InertialSensorRecord {
     private Timestamp timestamp;
     private Timestamp startTimestamp;
     private Vector3D vector;
 
-    public InertialSensorRecord(JSONObject sensorData, Timestamp startTimestamp, Timestamp timestamp) {
+    /**
+     * Parses the JSONObject corresponding to the sensor record
+     * @param sensorData the JSONObject to parse
+     * @param startTimestamp the zero time value
+     * @param timestamp the timestamp of the reading
+     */
+    InertialSensorRecord(JSONObject sensorData, Timestamp startTimestamp, Timestamp timestamp) {
         try {
             this.vector = new Vector3D(sensorData.getFloat("xValue"), sensorData.getFloat("yValue"), sensorData.getFloat("zValue"));
             this.timestamp = timestamp;
@@ -27,7 +39,13 @@ public class InertialSensorRecord {
         }
     }
 
-    public static void toCSV(List<InertialSensorRecord> inertialSensorRecordList, String type, String filename) {
+    /**
+     * Exports a list of raw inertial data to CSV (to test the parser)
+     * @param inertialSensorRecordList a list of raw inertial values
+     * @param type the type of sensor which produced the value
+     * @param filename the name of the file for the export
+     */
+    static void toCSV(List<InertialSensorRecord> inertialSensorRecordList, String type, String filename) {
         try {
             String[] HEADERS = {"timestamp", "x " + type + " value", "y " + type + " value", "z " + type + " value"};
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
@@ -41,21 +59,19 @@ public class InertialSensorRecord {
         }
     }
 
-    public double getX() {
+    double getX() {
         return vector.getX();
     }
 
-    public double getY() {
+    double getY() {
         return vector.getY();
     }
 
-    public double getZ() {
+    double getZ() {
         return vector.getZ();
     }
 
-    public long getTime() {
+    long getTime() {
         return timestamp.getTime();
     }
-
-
 }

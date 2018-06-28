@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,18 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DataSet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
+      <file leaf-file-name="InertialSensorRecord.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+            <state relative-caret-position="168">
+              <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
               <folding>
-                <element signature="e#4887#4888#0" expanded="true" />
-                <element signature="e#4941#4942#0" expanded="true" />
-                <element signature="e#4981#4982#0" expanded="true" />
-                <element signature="e#5013#5014#0" expanded="true" />
-                <element signature="e#5052#5053#0" expanded="true" />
-                <element signature="e#5084#5085#0" expanded="true" />
+                <element signature="e#1818#1819#0" expanded="true" />
+                <element signature="e#1854#1855#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#1911#1912#0" expanded="true" />
+                <element signature="e#1932#1933#0" expanded="true" />
+                <element signature="e#1968#1969#0" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
+                <element signature="e#2032#2033#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,7 +80,6 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSM.java" />
-        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/AnchorPointDecisionTree.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSMTest.java" />
@@ -94,6 +95,7 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" />
       </list>
     </option>
   </component>
@@ -306,7 +308,7 @@
       <workItem from="1529268075582" duration="10050000" />
       <workItem from="1529325278187" duration="11879000" />
       <workItem from="1529350375333" duration="2712000" />
-      <workItem from="1530111566343" duration="4891000" />
+      <workItem from="1530111566343" duration="5174000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -354,7 +356,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114975000" />
+    <option name="totallyTimeSpent" value="115258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -530,13 +532,6 @@
     <entry file="file://$PROJECT_DIR$/stairs2.JSON" />
     <entry file="file://$PROJECT_DIR$/aggregated_2018-06-02_17-09-44.csv" />
     <entry file="file://$PROJECT_DIR$/elevator2.JSON" />
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="35" column="120" selection-start-line="35" selection-start-column="120" selection-end-line="35" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/DataExporter/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/MyPoint.java" />
@@ -635,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
+        <state relative-caret-position="239">
           <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
           <folding>
             <element signature="e#4887#4888#0" expanded="true" />
@@ -644,6 +639,23 @@
             <element signature="e#5013#5014#0" expanded="true" />
             <element signature="e#5052#5053#0" expanded="true" />
             <element signature="e#5084#5085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding>
+            <element signature="e#1818#1819#0" expanded="true" />
+            <element signature="e#1854#1855#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1968#1969#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
           </folding>
         </state>
       </provider>
