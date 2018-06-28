@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/Step.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,20 +27,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StepDetector.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java">
+      <file leaf-file-name="AggregatedReading.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataExporter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="281">
+              <caret line="189" column="120" selection-start-line="189" selection-start-column="120" selection-end-line="189" selection-end-column="120" />
+              <folding>
+                <element signature="e#5625#5626#0" expanded="true" />
+                <element signature="e#5677#5678#0" expanded="true" />
+                <element signature="e#5751#5752#0" expanded="true" />
+                <element signature="e#5800#5801#0" expanded="true" />
+                <element signature="e#5877#5878#0" expanded="true" />
+                <element signature="e#5929#5930#0" expanded="true" />
+                <element signature="e#5972#5973#0" expanded="true" />
+                <element signature="e#6022#6023#0" expanded="true" />
+                <element signature="e#6069#6070#0" expanded="true" />
+                <element signature="e#6140#6141#0" expanded="true" />
+                <element signature="e#6188#6189#0" expanded="true" />
+                <element signature="e#6244#6245#0" expanded="true" />
+                <element signature="e#6283#6284#0" expanded="true" />
+                <element signature="e#6315#6316#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,7 +91,6 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/AnchorPointDecisionTree.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/AnchorPointDecisionTree.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/ElevatorFSMTest.java" />
-        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/MyPoint.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StateFSM.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/anchorextraction/inertial/AnchorPointDecisionTree.java" />
@@ -99,6 +101,7 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepFSM.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepStateful.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java" />
       </list>
     </option>
   </component>
@@ -311,7 +314,7 @@
       <workItem from="1529268075582" duration="10050000" />
       <workItem from="1529325278187" duration="11879000" />
       <workItem from="1529350375333" duration="2712000" />
-      <workItem from="1530111566343" duration="3196000" />
+      <workItem from="1530111566343" duration="4516000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -359,7 +362,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113280000" />
+    <option name="totallyTimeSpent" value="114600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -570,17 +573,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetectedCallback.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="117" column="49" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
@@ -612,6 +611,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/dataexporter/DataExporter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -619,10 +625,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/tracesgeneration/stepdetector/StepDetector.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/AggregatedReading.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+        <state relative-caret-position="281">
+          <caret line="189" column="120" selection-start-line="189" selection-start-column="120" selection-end-line="189" selection-end-column="120" />
+          <folding>
+            <element signature="e#5625#5626#0" expanded="true" />
+            <element signature="e#5677#5678#0" expanded="true" />
+            <element signature="e#5751#5752#0" expanded="true" />
+            <element signature="e#5800#5801#0" expanded="true" />
+            <element signature="e#5877#5878#0" expanded="true" />
+            <element signature="e#5929#5930#0" expanded="true" />
+            <element signature="e#5972#5973#0" expanded="true" />
+            <element signature="e#6022#6023#0" expanded="true" />
+            <element signature="e#6069#6070#0" expanded="true" />
+            <element signature="e#6140#6141#0" expanded="true" />
+            <element signature="e#6188#6189#0" expanded="true" />
+            <element signature="e#6244#6245#0" expanded="true" />
+            <element signature="e#6283#6284#0" expanded="true" />
+            <element signature="e#6315#6316#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
