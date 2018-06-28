@@ -1,3 +1,8 @@
+package com.kaloyanveselinov.tracesgeneration.stepdetector;
+
+import org.statefulj.persistence.annotations.State;
+import java.sql.Timestamp;
+
 /**
  * Stateful entity for the step detection FSM
  *
@@ -5,11 +10,6 @@
  * @version 1.0
  * @see <a href="http://www.statefulj.org/fsm/#define-your-stateful-entity"></a>
  */
-package com.kaloyanveselinov.tracesgeneration.stepdetector;
-
-import org.statefulj.persistence.annotations.State;
-import java.sql.Timestamp;
-
 public class StepStateful {
     @State
     private String state;

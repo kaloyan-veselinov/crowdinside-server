@@ -1,11 +1,3 @@
-/**
- * A step detector as described in Uptime
- *
- * @author Kaloyan Veselinov
- * @version 1.0
- * @see <a href="http://ieeexplore.ieee.org/abstract/document/6214359/"></a>
- */
-
 package com.kaloyanveselinov.tracesgeneration.stepdetector;
 
 import com.kaloyanveselinov.datacollection.AggregatedReading;
@@ -15,6 +7,15 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * A step detector as described in Uptime
+ *
+ * Usage: <code>java -jar step-detector.jar dataset.JSON</code>
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ * @see <a href="http://ieeexplore.ieee.org/abstract/document/6214359/"></a>
+ */
 public class StepDetector {
     // Stateful entity for the StepFSM as per Statefulj's specifications
     private StepStateful stepStateful = new StepStateful();

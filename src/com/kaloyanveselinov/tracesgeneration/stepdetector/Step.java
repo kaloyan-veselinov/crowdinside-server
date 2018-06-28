@@ -1,10 +1,3 @@
-/**
- * The Class Step represents a step detected by the Step FSM with all necessary parameters for classification.
- *
- * @author Kaloyan Veselinov
- * @version 1.0
- */
-
 package com.kaloyanveselinov.tracesgeneration.stepdetector;
 
 import com.kaloyanveselinov.datacollection.AggregatedReading;
@@ -25,6 +18,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The Class Step represents a step detected by the Step FSM with all necessary parameters for classification.
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ */
 class Step {
     // Raw step data
     private long stepDuration;

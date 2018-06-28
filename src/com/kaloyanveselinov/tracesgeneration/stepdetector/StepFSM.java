@@ -1,14 +1,3 @@
-/**
- * The StepFSM class is used to detect a step as described in Uptime
- *
- * The class uses the Statefulj FSM library
- *
- * @author Kaloyan Veselinov
- * @version 1.0
- * @see <a href="http://ieeexplore.ieee.org/abstract/document/6214359/"></a>
- * @see <a href="http://www.statefulj.org/"></a>
- */
-
 package com.kaloyanveselinov.tracesgeneration.stepdetector;
 
 import com.kaloyanveselinov.datacollection.AggregatedReading;
@@ -23,6 +12,16 @@ import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The StepFSM class is used to detect a step as described in Uptime
+ *
+ * The class uses the Statefulj FSM library
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ * @see <a href="http://ieeexplore.ieee.org/abstract/document/6214359/"></a>
+ * @see <a href="http://www.statefulj.org/"></a>
+ */
 class StepFSM extends FSM<StepStateful> {
     private StepDetector detector;
 
