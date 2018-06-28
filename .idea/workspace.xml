@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12144ff0-f2d2-41d9-98b3-bfd3d0d7e8ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/LocationRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/LocationRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,44 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InertialSensorRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
+      <file leaf-file-name="WiFiScan.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1077">
-              <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-              <folding>
-                <element signature="e#1818#1819#0" expanded="true" />
-                <element signature="e#1854#1855#0" expanded="true" />
-                <element signature="e#1875#1876#0" expanded="true" />
-                <element signature="e#1911#1912#0" expanded="true" />
-                <element signature="e#1932#1933#0" expanded="true" />
-                <element signature="e#1968#1969#0" expanded="true" />
-                <element signature="e#1990#1991#0" expanded="true" />
-                <element signature="e#2032#2033#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationRecord.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/LocationRecord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="57" column="33" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="33" />
-              <folding>
-                <element signature="e#1058#1059#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1130#1131#0" expanded="true" />
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1201#1202#0" expanded="true" />
-                <element signature="e#1232#1233#0" expanded="true" />
-                <element signature="e#1268#1269#0" expanded="true" />
-                <element signature="e#1300#1301#0" expanded="true" />
-                <element signature="e#1331#1332#0" expanded="true" />
-                <element signature="e#1360#1361#0" expanded="true" />
-                <element signature="e#1399#1400#0" expanded="true" />
-                <element signature="e#1431#1432#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="224">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -97,7 +64,6 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiRecord.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/Elevator.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/DataExporter.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/dataanalyzer/ElevatorFSMTest.java" />
@@ -119,6 +85,7 @@
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/DataSet.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java" />
         <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/LocationRecord.java" />
+        <option value="$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java" />
       </list>
     </option>
   </component>
@@ -331,7 +298,7 @@
       <workItem from="1529268075582" duration="10050000" />
       <workItem from="1529325278187" duration="11879000" />
       <workItem from="1529350375333" duration="2712000" />
-      <workItem from="1530111566343" duration="5360000" />
+      <workItem from="1530111566343" duration="5533000" />
     </task>
     <task id="LOCAL-00001" summary="Parsed data set + adding timestamp to data constructors">
       <created>1525707158098</created>
@@ -379,7 +346,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115444000" />
+    <option name="totallyTimeSpent" value="115617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -536,13 +503,6 @@
     <entry file="file://$PROJECT_DIR$/accelerometer_2018-05-15_16-01-55.csv" />
     <entry file="file://$PROJECT_DIR$/aggregated__2018-05-15_16-01-55.csv" />
     <entry file="file://$PROJECT_DIR$/out/production/crowdinside-server/com/kaloyanveselinov/datacollection/WiFiScan.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="13" lean-forward="true" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aggregated_2018-05-15_16-01-55.csv" />
     <entry file="file://$PROJECT_DIR$/stairs1.JSON" />
     <entry file="file://$PROJECT_DIR$/stairs2.JSON" />
@@ -659,23 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1077">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          <folding>
-            <element signature="e#1818#1819#0" expanded="true" />
-            <element signature="e#1854#1855#0" expanded="true" />
-            <element signature="e#1875#1876#0" expanded="true" />
-            <element signature="e#1911#1912#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-            <element signature="e#1968#1969#0" expanded="true" />
-            <element signature="e#1990#1991#0" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/LocationRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
@@ -694,6 +637,30 @@
             <element signature="e#1399#1400#0" expanded="true" />
             <element signature="e#1431#1432#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/InertialSensorRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1063">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding>
+            <element signature="e#1818#1819#0" expanded="true" />
+            <element signature="e#1854#1855#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1968#1969#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaloyanveselinov/datacollection/WiFiScan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
         </state>
       </provider>
     </entry>
