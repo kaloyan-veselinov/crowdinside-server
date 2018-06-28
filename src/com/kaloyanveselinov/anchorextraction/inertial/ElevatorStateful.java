@@ -2,11 +2,18 @@ package com.kaloyanveselinov.anchorextraction.inertial;
 
 import org.statefulj.persistence.annotations.State;
 
-public class ElevatorStateful {
+/**
+ * Stateful object as per Statefulj's specifications
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ * @see <a href="http://www.statefulj.org/fsm/#define-your-stateful-entity"></a>
+ */
+class ElevatorStateful {
     @State
     private String state;
 
-    public String getState() {
+    String getState() {
         return state;
     }
 }
