@@ -5,13 +5,24 @@ import org.json.JSONObject;
 
 import java.sql.Timestamp;
 
-public class LocationRecord {
+/**
+ * Class for a raw GPS reading
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ */
+class LocationRecord {
     private double certainty, accuracyRange;
     private double latitude, longitude;
     private byte source;
     private Timestamp timestamp;
 
-    public LocationRecord(JSONObject locationRecord, Timestamp timestamp){
+    /**
+     * Parses the GPS reading in the JSONObject
+     * @param locationRecord the GPS reading to parse
+     * @param timestamp the timestamp of the reading
+     */
+    LocationRecord(JSONObject locationRecord, Timestamp timestamp){
         try{
             this.latitude = locationRecord.getDouble("latitude");
             this.longitude = locationRecord.getDouble("longitude");
@@ -24,4 +35,27 @@ public class LocationRecord {
         }
     }
 
+    public double getCertainty() {
+        return certainty;
+    }
+
+    public double getAccuracyRange() {
+        return accuracyRange;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public byte getSource() {
+        return source;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
 }
