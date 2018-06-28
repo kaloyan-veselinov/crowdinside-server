@@ -4,6 +4,8 @@ This repository contains a collection of indoor localization modules described i
 
 ## Modules
 
+All relevant JARs are located in the `jars` directory.
+
 ### Data Exporter
 
 This module parses the raw data produced by the Android application and exports:
