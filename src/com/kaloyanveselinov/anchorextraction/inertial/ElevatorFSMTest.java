@@ -4,22 +4,22 @@ import org.statefulj.fsm.FSM;
 import org.statefulj.fsm.TooBusyException;
 
 public class ElevatorFSMTest {
-    private static FSM<Elevator> fsm = new ElevatorFSM();
+    private static FSM<ElevatorStateful> fsm = new ElevatorFSM();
 
     private static boolean testElevatorUp() throws TooBusyException {
-        Elevator elevator = new Elevator();
-        fsm.onEvent(elevator, ElevatorFSM.notchUp);
-        fsm.onEvent(elevator, ElevatorFSM.silence);
-        fsm.onEvent(elevator, ElevatorFSM.notchDown);
-        return elevator.getState().equals(ElevatorFSM.elevatorUp.getName());
+        ElevatorStateful elevatorStateful = new ElevatorStateful();
+        fsm.onEvent(elevatorStateful, ElevatorFSM.notchUp);
+        fsm.onEvent(elevatorStateful, ElevatorFSM.silence);
+        fsm.onEvent(elevatorStateful, ElevatorFSM.notchDown);
+        return elevatorStateful.getState().equals(ElevatorFSM.elevatorUp.getName());
     }
 
     private static boolean testElevatorDown() throws TooBusyException {
-        Elevator elevator = new Elevator();
-        fsm.onEvent(elevator, ElevatorFSM.notchDown);
-        fsm.onEvent(elevator, ElevatorFSM.silence);
-        fsm.onEvent(elevator, ElevatorFSM.notchUp);
-        return elevator.getState().equals(ElevatorFSM.elevatorDown.getName());
+        ElevatorStateful elevatorStateful = new ElevatorStateful();
+        fsm.onEvent(elevatorStateful, ElevatorFSM.notchDown);
+        fsm.onEvent(elevatorStateful, ElevatorFSM.silence);
+        fsm.onEvent(elevatorStateful, ElevatorFSM.notchUp);
+        return elevatorStateful.getState().equals(ElevatorFSM.elevatorDown.getName());
     }
 
     public static void main(String[] args) throws TooBusyException {

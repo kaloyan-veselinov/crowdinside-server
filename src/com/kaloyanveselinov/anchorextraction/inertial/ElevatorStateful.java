@@ -2,7 +2,7 @@ package com.kaloyanveselinov.anchorextraction.inertial;
 
 import org.statefulj.persistence.annotations.State;
 
-public class Elevator {
+public class ElevatorStateful {
     @State
     private String state;
 

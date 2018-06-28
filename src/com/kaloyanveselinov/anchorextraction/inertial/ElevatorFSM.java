@@ -11,7 +11,7 @@ import org.statefulj.persistence.memory.MemoryPersisterImpl;
 import java.util.LinkedList;
 import java.util.List;
 
-class ElevatorFSM extends FSM<Elevator> {
+class ElevatorFSM extends FSM<ElevatorStateful> {
 
     // Events
     static String notchUp = "Notch up";
@@ -19,14 +19,14 @@ class ElevatorFSM extends FSM<Elevator> {
     static String silence = "Silence event";
 
     // States
-    private static State<Elevator> standing = new StateImpl<>("Standing");
-    private static State<Elevator> overWeight = new StateImpl<>("Over-weight");
-    private static State<Elevator> weightLoss = new StateImpl<>("Weight-loss");
-    private static State<Elevator> goingUp = new StateImpl<>("Going up");
-    private static State<Elevator> goingDown = new StateImpl<>("Going down");
-    static State<Elevator> elevatorUp = new StateImpl<>("Elevator up", true);
-    static State<Elevator> elevatorDown = new StateImpl<>("Elevator down", true);
-    private static final State<Elevator> START_STATE = standing;
+    private static State<ElevatorStateful> standing = new StateImpl<>("Standing");
+    private static State<ElevatorStateful> overWeight = new StateImpl<>("Over-weight");
+    private static State<ElevatorStateful> weightLoss = new StateImpl<>("Weight-loss");
+    private static State<ElevatorStateful> goingUp = new StateImpl<>("Going up");
+    private static State<ElevatorStateful> goingDown = new StateImpl<>("Going down");
+    static State<ElevatorStateful> elevatorUp = new StateImpl<>("ElevatorStateful up", true);
+    static State<ElevatorStateful> elevatorDown = new StateImpl<>("ElevatorStateful down", true);
+    private static final State<ElevatorStateful> START_STATE = standing;
 
     // Action builder
     public static class ElevatorAction<Elevator> implements Action<Elevator> {
@@ -42,11 +42,11 @@ class ElevatorFSM extends FSM<Elevator> {
     }
 
     // Actions
-    private static Action<Elevator> inElevatorUp = new ElevatorAction<>("In elevator, going up");
-    private static Action<Elevator> inElevatorDown =  new ElevatorAction<>("In elevator, going down");
+    private static Action<ElevatorStateful> inElevatorUp = new ElevatorAction<>("In elevator, going up");
+    private static Action<ElevatorStateful> inElevatorDown =  new ElevatorAction<>("In elevator, going down");
 
-    private static List<State<Elevator>> getStates(){
-        List<State<Elevator>> states = new LinkedList<>();
+    private static List<State<ElevatorStateful>> getStates(){
+        List<State<ElevatorStateful>> states = new LinkedList<>();
         states.add(standing);
         states.add(goingUp);
         states.add(goingDown);
@@ -79,18 +79,18 @@ class ElevatorFSM extends FSM<Elevator> {
     }
 
     ElevatorFSM() {
-        super("Elevator FSM", new MemoryPersisterImpl<>(getStates(), START_STATE));
+        super("ElevatorStateful FSM", new MemoryPersisterImpl<>(getStates(), START_STATE));
         initTransitions();
     }
 
-    boolean isInElevator(Elevator elevator, AggregatedReading reading) throws TooBusyException {
+    boolean isInElevator(ElevatorStateful elevatorStateful, AggregatedReading reading) throws TooBusyException {
         double accMagn = reading.getAccelerationMagnitude();
         if (accMagn < 9.2)
-            onEvent(elevator, ElevatorFSM.notchDown);
+            onEvent(elevatorStateful, ElevatorFSM.notchDown);
         else if (accMagn > 10.4)
-            onEvent(elevator, ElevatorFSM.notchUp);
+            onEvent(elevatorStateful, ElevatorFSM.notchUp);
         else if (accMagn > 9.7 && accMagn < 9.95)
-            onEvent(elevator, ElevatorFSM.silence);
-        return ElevatorFSM.elevatorDown.getName().equals(elevator.getState()) || ElevatorFSM.elevatorUp.getName().equals(elevator.getState());
+            onEvent(elevatorStateful, ElevatorFSM.silence);
+        return ElevatorFSM.elevatorDown.getName().equals(elevatorStateful.getState()) || ElevatorFSM.elevatorUp.getName().equals(elevatorStateful.getState());
     }
 }

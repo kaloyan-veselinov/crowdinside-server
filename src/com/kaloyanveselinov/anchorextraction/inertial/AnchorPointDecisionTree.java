@@ -6,8 +6,16 @@ import org.statefulj.fsm.TooBusyException;
 
 import java.io.File;
 
+/**
+ * Class for detecting inertial anchor points (as described in CrowdInside)
+ *
+ * Usage: <code>java -jar inertial-anchor.jar dataset.JSON</code>
+ *
+ * @author Kaloyan Veselinov
+ * @version 1.0
+ */
 public class AnchorPointDecisionTree {
-    private Elevator elevator = new Elevator();
+    private ElevatorStateful elevatorStateful = new ElevatorStateful();
     private ElevatorFSM fsm = new ElevatorFSM();
 
     public static void main(String[] args) throws TooBusyException {
@@ -25,8 +33,17 @@ public class AnchorPointDecisionTree {
         } else System.err.println("No such file");
     }
 
+    /**
+     * Detects an anchor points on the arrival of a new reading using a decision tree
+     *
+     * Parameters created in Weka using a REPTree limited to a depth of 2
+     *
+     * @param newReading the new reading
+     * @return the anchor point type
+     * @throws TooBusyException if an error has occured in the ElevatorFSM
+     */
     private AnchorPointType getAnchorPoint(AggregatedReading newReading) throws TooBusyException {
-        if (fsm.isInElevator(elevator, newReading)) return AnchorPointType.ELEVATOR;
+        if (fsm.isInElevator(elevatorStateful, newReading)) return AnchorPointType.ELEVATOR;
         else if (newReading.getAccelerationVariance() < 0.1) {
             return AnchorPointType.STANDING;
         } else if (newReading.getAccYZCorrelation() < -0.06) {
@@ -34,6 +51,9 @@ public class AnchorPointDecisionTree {
         } else return AnchorPointType.WALKING;
     }
 
+    /**
+     * Possible anchor points
+     */
     public enum AnchorPointType {
         STANDING, WALKING, STAIRS, ELEVATOR
     }
